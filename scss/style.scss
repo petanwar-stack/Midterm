@@ -1,5 +1,33 @@
-$primary: red;
+/* scss/style.scss (Conceptual SCSS) */
+$dark-bg-color: #212529;
+$light-bg-color: white;
+$output-dark-color: #4b3d16; // Dark brown for output
+$input-dark-color: #495057; // Darker input field background
 
-h1 {
-  color: $primary;
+body[data-bs-theme="dark"] {
+    .light-gray-header {
+        background-color: lighten($dark-bg-color, 10%); // Slightly lighter dark
+    }
+    .input-screen {
+        background-color: $input-dark-color;
+        color: white;
+        border: 1px solid lighten($input-dark-color, 15%);
+    }
+    .output-screen {
+        background-color: $output-dark-color;
+        color: white;
+        border: 1px solid darken($output-dark-color, 5%);
+        // Set a minimum height to match the look
+        min-height: 5rem; 
+    }
+    .error-output {
+        color: #ffc107; // Yellow text for errors in dark mode
+    }
+}
+
+body[data-bs-theme="light"] {
+    .light-gray-header {
+        background-color: #f8f9fa; // Light gray for light mode header
+    }
+    // ... add light mode styles ...
 }
